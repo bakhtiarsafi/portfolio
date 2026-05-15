@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bakhtiar Safi — Business Student, Aspiring Entrepreneur & Financial Analyst from Pakistan.">
+<meta name="keywords" content="Bakhtiar Safi, Business Student, Financial Analyst, Entrepreneur, Pakistan, UCP">
+<meta name="author" content="Bakhtiar Safi">
+<meta property="og:title" content="Bakhtiar Safi | Portfolio">
+<meta property="og:description" content="Personal portfolio of Bakhtiar Safi — Business Student & Aspiring Entrepreneur">
+<title>Bakhtiar Safi | Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ========================================
+   style.css — All styles go here
+   ======================================== */
+:root{
+  --bg-primary:#f0f4ff;--bg-secondary:#ffffff;--bg-card:#ffffff;
+  --text-primary:#0f172a;--text-secondary:#475569;--text-muted:#94a3b8;
+  --accent:#2563eb;--accent2:#7c3aed;
+  --grad:linear-gradient(135deg,#2563eb,#7c3aed);
+  --border:#e2e8f0;--shadow:0 4px 20px rgba(37,99,235,.08);
+  --shadow-lg:0 12px 40px rgba(37,99,235,.16);
+  --nav-bg:rgba(240,244,255,.92);
+  --skill-bg:#eff6ff;--skill-text:#2563eb;--card-hover:#f0f7ff;
+  --timeline:#e2e8f0;
+}
+[data-theme=dark]{
+  --bg-primary:#0c0c1a;--bg-secondary:#13132a;--bg-card:#1a1a35;
+  --text-primary:#e2e8f0;--text-secondary:#94a3b8;--text-muted:#64748b;
+  --accent:#60a5fa;--accent2:#a78bfa;
+  --grad:linear-gradient(135deg,#60a5fa,#a78bfa);
+  --border:#252545;--shadow:0 4px 20px rgba(0,0,0,.4);
+  --shadow-lg:0 12px 40px rgba(0,0,0,.5);
+  --nav-bg:rgba(12,12,26,.92);
+  --skill-bg:#1e2a45;--skill-text:#60a5fa;--card-hover:#20204a;
+  --timeline:#252545;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg-primary);color:var(--text-primary);transition:background .3s,color .3s;line-height:1.6}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--nav-bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;transition:all .3s}
+.nav-logo{font-size:1.35rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:1.4rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--text-secondary);font-size:.875rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:.8rem}
+.theme-btn{background:var(--bg-card);border:1px solid var(--border);color:var(--text-primary);width:38px;height:38px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.95rem;transition:all .3s}
+.theme-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--text-primary);border-radius:2px;transition:all .3s}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:80px 2rem 3rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,.07) 0%,transparent 70%);top:-150px;right:-150px;pointer-events:none}
+.hero::after{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,.05) 0%,transparent 70%);bottom:-100px;left:-100px;pointer-events:none}
+.hero-inner{max-width:1100px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--skill-bg);color:var(--accent);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:.35rem 1rem;border-radius:50px;margin-bottom:1rem;border:1px solid rgba(37,99,235,.15)}
+.hero h1{font-size:clamp(2.4rem,4.5vw,3.6rem);font-weight:800;line-height:1.15;margin-bottom:.6rem}
+.hero h1 .grd{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-title{font-size:1rem;color:var(--text-secondary);margin-bottom:1.5rem;line-height:1.7}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+.btn-primary{background:var(--grad);color:#fff;padding:.75rem 1.6rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:.9rem;border:none;cursor:pointer;transition:transform .2s,box-shadow .2s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(37,99,235,.4)}
+.btn-outline{background:transparent;color:var(--accent);padding:.75rem 1.6rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:.9rem;border:2px solid var(--accent);cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-outline:hover{background:var(--accent);color:#fff;transform:translateY(-2px)}
+.hero-socials{display:flex;gap:.8rem}
+.hero-socials a{width:40px;height:40px;border-radius:50%;background:var(--bg-card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-secondary);text-decoration:none;font-size:.95rem;transition:all .3s}
+.hero-socials a:hover{background:var(--grad);color:#fff;border-color:transparent;transform:translateY(-3px)}
+.photo-wrap{display:flex;justify-content:center}
+.photo-ring{position:relative;width:300px;height:300px}
+.photo-ring::before{content:'';position:absolute;inset:-4px;border-radius:50%;background:var(--grad);z-index:0;animation:spin 10s linear infinite}
+.photo-ring::after{content:'';position:absolute;inset:0;border-radius:50%;background:var(--bg-primary);z-index:1}
+@keyframes spin{to{transform:rotate(360deg)}}
+.photo-ring img{position:absolute;inset:8px;border-radius:50%;object-fit:cover;z-index:2;width:calc(100% - 16px);height:calc(100% - 16px)}
+
+/* ── SECTIONS ── */
+section{padding:80px 2rem}
+.section-inner{max-width:1100px;margin:0 auto}
+.stag{display:inline-block;background:var(--skill-bg);color:var(--accent);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:.3rem .9rem;border-radius:50px;margin-bottom:.7rem;border:1px solid rgba(37,99,235,.12)}
+.stitle{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;margin-bottom:.4rem}
+.ssub{color:var(--text-muted);margin-bottom:3rem;font-size:.95rem}
+
+/* ── ABOUT ── */
+#about{background:var(--bg-secondary)}
+.about-grid{display:grid;grid-template-columns:1fr 2fr;gap:2.5rem;align-items:start}
+.info-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:1.8rem;box-shadow:var(--shadow)}
+.info-row{display:flex;align-items:center;gap:.9rem;padding:.75rem 0;border-bottom:1px solid var(--border)}
+.info-row:last-child{border-bottom:none}
+.info-icon{width:36px;height:36px;border-radius:10px;background:var(--skill-bg);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0}
+.info-text label{display:block;font-size:.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.info-text span{font-size:.88rem;font-weight:500;color:var(--text-primary)}
+.about-body p{color:var(--text-secondary);margin-bottom:1.2rem;font-size:.97rem;line-height:1.85}
+
+/* ── TIMELINE ── */
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--timeline)}
+.tl-item{position:relative;padding:0 0 2.5rem 2rem}
+.tl-item::before{content:'';position:absolute;left:-7px;top:8px;width:16px;height:16px;border-radius:50%;background:var(--grad);border:3px solid var(--bg-primary);z-index:1}
+.tl-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1.5rem;box-shadow:var(--shadow);transition:all .3s}
+.tl-card:hover{transform:translateX(6px);box-shadow:var(--shadow-lg);background:var(--card-hover)}
+.tl-date{display:inline-flex;align-items:center;gap:.4rem;background:var(--skill-bg);color:var(--accent);font-size:.75rem;font-weight:700;padding:.25rem .75rem;border-radius:50px;margin-bottom:.8rem}
+.tl-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.3rem}
+.tl-card h4{font-size:.9rem;color:var(--accent);font-weight:600;margin-bottom:.7rem;display:flex;align-items:center;gap:.4rem}
+.tl-card p{font-size:.88rem;color:var(--text-secondary);line-height:1.75}
+
+/* ── SKILLS ── */
+#skills{background:var(--bg-secondary)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.4rem}
+.skill-cat{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1.5rem;box-shadow:var(--shadow);transition:all .3s}
+.skill-cat:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.skill-cat h3{font-size:.9rem;font-weight:700;color:var(--accent);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.skill-tags{display:flex;flex-wrap:wrap;gap:.45rem}
+.skill-tag{background:var(--skill-bg);color:var(--skill-text);font-size:.78rem;font-weight:500;padding:.3rem .8rem;border-radius:50px;transition:all .2s;cursor:default}
+.skill-tag:hover{background:var(--accent);color:#fff}
+
+/* ── PROJECTS ── */
+#projects{background:var(--bg-primary)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+.proj-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1.8rem;box-shadow:var(--shadow);transition:all .3s;display:flex;flex-direction:column}
+.proj-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.proj-icon{width:48px;height:48px;border-radius:14px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.25rem;margin-bottom:1.2rem}
+.proj-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.6rem}
+.proj-card p{font-size:.88rem;color:var(--text-secondary);line-height:1.75;flex:1;margin-bottom:1.2rem}
+.proj-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.proj-tag{background:var(--skill-bg);color:var(--skill-text);font-size:.73rem;font-weight:500;padding:.25rem .65rem;border-radius:50px}
+
+/* ── CERTIFICATIONS ── */
+#certifications{background:var(--bg-secondary)}
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.4rem}
+.cert-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1.4rem;box-shadow:var(--shadow);display:flex;align-items:flex-start;gap:1rem;transition:all .3s}
+.cert-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.cert-icon{width:44px;height:44px;border-radius:12px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.1rem;flex-shrink:0}
+.cert-info h3{font-size:.92rem;font-weight:700;margin-bottom:.25rem}
+.cert-info p{font-size:.82rem;color:var(--text-secondary)}
+.cert-info span{display:inline-block;margin-top:.3rem;font-size:.75rem;color:var(--accent);font-weight:600}
+
+/* ── CONTACT ── */
+#contact{background:var(--bg-primary)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:2.5rem;align-items:start}
+.contact-links{display:flex;flex-direction:column;gap:1rem}
+.c-link{display:flex;align-items:center;gap:.9rem;padding:.9rem 1rem;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;text-decoration:none;color:var(--text-primary);transition:all .3s}
+.c-link:hover{background:var(--card-hover);transform:translateX(5px);border-color:var(--accent)}
+.c-link-icon{width:42px;height:42px;border-radius:12px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;flex-shrink:0}
+.c-link-info label{display:block;font-size:.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.c-link-info span{font-size:.88rem;font-weight:500}
+.contact-form{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:2rem;box-shadow:var(--shadow)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.form-group{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem}
+.form-group label{font-size:.82rem;font-weight:600;color:var(--text-secondary)}
+.form-group input,.form-group textarea{background:var(--bg-primary);border:1px solid var(--border);border-radius:10px;padding:.7rem .95rem;font-size:.9rem;color:var(--text-primary);font-family:'Inter',sans-serif;transition:border-color .2s,box-shadow .2s;outline:none;resize:vertical}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,235,.1)}
+.form-success{display:none;background:#ecfdf5;color:#065f46;border:1px solid #a7f3d0;border-radius:10px;padding:.75rem 1rem;font-size:.88rem;font-weight:500;margin-top:1rem;text-align:center}
+[data-theme=dark] .form-success{background:#064e3b;color:#a7f3d0;border-color:#065f46}
+
+/* ── FOOTER ── */
+footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:1.8rem 2rem;text-align:center;color:var(--text-muted);font-size:.85rem}
+footer a{color:var(--accent);text-decoration:none}
+
+/* ── SCROLL TOP ── */
+.scroll-top{position:fixed;bottom:2rem;right:2rem;width:44px;height:44px;border-radius:50%;background:var(--grad);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.95rem;opacity:0;pointer-events:none;transform:translateY(10px);transition:all .3s;z-index:999;box-shadow:0 4px 15px rgba(37,99,235,.4)}
+.scroll-top.vis{opacity:1;pointer-events:all;transform:translateY(0)}
+
+/* ── ANIMATIONS ── */
+.fade{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.fade.vis{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .about-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .hamburger{display:flex}
+  .nav-links{position:fixed;top:64px;left:0;right:0;background:var(--nav-bg);backdrop-filter:blur(20px);flex-direction:column;padding:1.5rem;gap:1.2rem;border-bottom:1px solid var(--border);transform:translateY(-110%);opacity:0;pointer-events:none;transition:all .3s}
+  .nav-links.open{transform:translateY(0);opacity:1;pointer-events:all}
+  .hero-inner{grid-template-columns:1fr;text-align:center;gap:2.5rem}
+  .hero-btns,.hero-socials{justify-content:center}
+  .photo-ring{width:220px;height:220px}
+  .form-row{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  section{padding:60px 1rem}
+  .hero{padding:80px 1rem 2rem}
+  nav{padding:0 1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ========================================
+     NAVBAR
+     ======================================== -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo" id="navLogo">BS</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about"          onclick="closeMenu()">About</a></li>
+    <li><a href="#education"      onclick="closeMenu()">Education</a></li>
+    <li><a href="#skills"         onclick="closeMenu()">Skills</a></li>
+    <li><a href="#experience"     onclick="closeMenu()">Experience</a></li>
+    <li><a href="#projects"       onclick="closeMenu()">Projects</a></li>
+    <li><a href="#certifications" onclick="closeMenu()">Certifications</a></li>
+    <li><a href="#contact"        onclick="closeMenu()">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" title="Toggle theme">
+      <i class="fas fa-moon"></i>
+    </button>
+    <button class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Content injected by JS -->
+<main id="app"></main>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+/* ========================================
+   data.js — ✏️ EDIT ALL YOUR INFO HERE
+   Only change this object to update the site
+   ======================================== */
+const DATA = {
+  /* ── IDENTITY ── */
+  name:     "Bakhtiar Safi",
+  initials: "BS",
+  title:    "Business Student | Aspiring Entrepreneur | Financial Analyst",
+  tagline:  "Passionate about finance, technology, and building impactful business solutions.",
+
+  /* ── PHOTO ──
+     Replace with a URL or relative path like './assets/photo.jpg'
+     For GitHub Pages: put your photo in the project folder and set './photo.jpg' */
+  photo: "bk.jpg",
+
+  /* ── CONTACT ── */
+  email:    "Bakhteyarsafy641@gmail.com",
+  phone:    "+92 330 8495065",
+  location: "Lahore, Pakistan (Originally from Jalalabad, Afghanistan)",
+
+  /* ── SOCIAL ── */
+  github:   "https://github.com/bakhteyarsafy641-netizen",
+  linkedin: "#",   /* ← Add your LinkedIn URL here */
+
+  /* ── ABOUT ── (each string = one paragraph) */
+  about: [
+    "Hi, I'm Bakhtiar Safi, a passionate student, thinker, and aspiring entrepreneur from Pakistan. I enjoy exploring ideas, solving problems, and learning about the world around me. My interests range from business, technology, and bookkeeping systems to community development and social issues. I believe in combining creativity with practical thinking to create meaningful impact.",
+    "I'm currently focused on building my knowledge through academic projects, presentations, and technology development. One of my key projects involves developing POS (Point of Sale) systems and bookkeeping office solutions designed to help businesses manage sales, records, and financial operations more efficiently.",
+    "Beyond academics and entrepreneurship, I value personal growth, teamwork, and communication. My goal is to continue learning, growing, and contributing positively to my community and future career."
+  ],
+
+  /* ── EDUCATION ── (add/remove objects as needed) */
+  education: [
+    {
+      degree: "Bachelor of Science in Accounting & Finance (BSAF)",
+      school: "University of Central Punjab",
+      period: "2024 – Present",
+      detail: "Currently in 3rd Semester. Focused on accounting, finance, business management, and practical technology projects."
+    },
+    {
+      degree: "High School Graduate",
+      school: "ADMS School",
+      period: "Class of 2024",
+      detail: "Completed secondary education with a strong interest in leadership, communication, and problem-solving."
+    }
+  ],
+
+  /* ── SKILLS ── (add/remove categories and items) */
+  skills: [
+    {
+      icon: "fa-chart-bar",
+      category: "Finance & Accounting",
+      items: ["Bookkeeping & Record Management","Financial Reporting","Business Operations & Organization","ERP Systems (Odoo)"]
+    },
+    {
+      icon: "fa-laptop-code",
+      category: "Technology & Software",
+      items: ["POS Control & Management","Business Software Management","Basic Technology & Software Knowledge","Data Management"]
+    },
+    {
+      icon: "fa-palette",
+      category: "Design & Creative",
+      items: ["Graphic Designing","Visual Communication","Content Organization"]
+    },
+    {
+      icon: "fa-users",
+      category: "Communication & Languages",
+      items: ["Pashto (Native)","Urdu (Fluent)","English (Proficient)","Farsi (Conversational)"]
+    },
+    {
+      icon: "fa-brain",
+      category: "Soft Skills",
+      items: ["Problem Solving & Analytical Thinking","Adaptability & Leadership","Communication & Teamwork","Public Speaking"]
+    }
+  ],
+
+  /* ── EXPERIENCE ── (add/remove objects) */
+  experience: [
+    {
+      role: "Student Entrepreneur & Project Lead",
+      company: "Self-Initiated Projects",
+      period: "2023 – Present",
+      detail: "Leading development of POS systems and bookkeeping solutions for small businesses. Combining accounting knowledge with practical software tools to streamline operations and financial tracking."
+    },
+    {
+      role: "Academic Presenter & Research Contributor",
+      company: "University of Central Punjab",
+      period: "2024 – Present",
+      detail: "Contributing to academic projects, presentations, and group assignments in accounting, finance, and business management. Representing ideas and data findings to peers and faculty."
+    }
+  ],
+
+  /* ── PROJECTS ── (add/remove objects) */
+  projects: [
+    {
+      icon: "fa-cash-register",
+      name: "POS & Bookkeeping System",
+      desc: "A Point-of-Sale and bookkeeping office solution designed to help small businesses manage sales, records, and financial operations efficiently using ERP principles.",
+      tags: ["Business","Finance","ERP","Odoo"]
+    },
+    {
+      icon: "fa-file-invoice-dollar",
+      name: "Financial Record Management Tool",
+      desc: "A system for organizing and managing financial data, invoices, and business records with clean reporting outputs for SMEs.",
+      tags: ["Accounting","Data Management","Reporting"]
+    },
+    {
+      icon: "fa-people-carry",
+      name: "Community Development Initiative",
+      desc: "Conceptualized and planned a local community engagement project combining entrepreneurship with social impact for youth empowerment.",
+      tags: ["Entrepreneurship","Community","Leadership"]
+    }
+  ],
+
+  /* ── CERTIFICATIONS ── (add/remove objects) */
+  certifications: [
+    { icon:"fa-certificate", name:"Business Management Fundamentals", issuer:"Academic / Self-Study",  date:"2024" },
+    { icon:"fa-laptop",      name:"ERP & Odoo Business Software",      issuer:"Self-Study",             date:"2024" },
+    { icon:"fa-paint-brush", name:"Graphic Design Essentials",         issuer:"Self-Study",             date:"2023" }
+  ],
+
+  /* ── RESUME DOWNLOAD ──
+     Put your PDF resume in the project folder and update this path */
+  resumeURL: "#"   /* e.g. './Bakhtiar_Safi_Resume.pdf' */
+};
+/* ========================================
+   End of data — don't edit below unless
+   you want to change layout / logic
+   ======================================== */
+
+// ── SET META / TITLE ──
+document.title = `${DATA.name} | Portfolio`;
+
+// ── RENDER ALL SECTIONS ──
+document.getElementById('app').innerHTML = `
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><i class="fas fa-hand-wave"></i> Welcome to my portfolio</div>
+      <h1>Hi, I'm<br><span class="grd">${DATA.name}</span></h1>
+      <p class="hero-title">${DATA.title}</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+        <a href="${DATA.resumeURL}" class="btn-outline" onclick="dlResume(event)"><i class="fas fa-download"></i> Download CV</a>
+      </div>
+      <div class="hero-socials">
+        <a href="mailto:${DATA.email}" title="Email"><i class="fas fa-envelope"></i></a>
+        <a href="${DATA.github}" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="${DATA.linkedin}" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="tel:${DATA.phone.replace(/\s/g,'')}" title="Phone"><i class="fas fa-phone"></i></a>
+      </div>
+    </div>
+    <div class="photo-wrap">
+      <div class="photo-ring">
+        <img src="${DATA.photo}" alt="${DATA.name} profile photo"
+             onerror="this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(DATA.name)}&size=400&background=7c3aed&color=fff&bold=true'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <span class="stag">About Me</span>
+    <h2 class="stitle">Who I Am</h2>
+    <p class="ssub">My background, values, and what drives me</p>
+    <div class="about-grid fade d1">
+      <div class="info-card">
+        ${[
+          {icon:'fa-user',       label:'Name',     val: DATA.name},
+          {icon:'fa-envelope',   label:'Email',    val: DATA.email},
+          {icon:'fa-phone',      label:'Phone',    val: DATA.phone},
+          {icon:'fa-map-pin',    label:'Location', val: DATA.location},
+          {icon:'fab fa-github', label:'GitHub',   val: '@bakhteyarsafy641'}
+        ].map(r=>`
+        <div class="info-row">
+          <div class="info-icon"><i class="${r.icon.startsWith('fab')?r.icon:'fas '+r.icon}"></i></div>
+          <div class="info-text"><label>${r.label}</label><span>${r.val}</span></div>
+        </div>`).join('')}
+      </div>
+      <div class="about-body">${DATA.about.map(p=>`<p>${p}</p>`).join('')}</div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-inner">
+    <span class="stag">Education</span>
+    <h2 class="stitle">Academic Journey</h2>
+    <p class="ssub">My formal education and academic milestones</p>
+    <div class="timeline">
+      ${DATA.education.map((e,i)=>`
+      <div class="tl-item fade d${i+1}">
+        <div class="tl-card">
+          <div class="tl-date"><i class="fas fa-calendar-alt"></i> ${e.period}</div>
+          <h3>${e.degree}</h3>
+          <h4><i class="fas fa-university"></i> ${e.school}</h4>
+          <p>${e.detail}</p>
+        </div>
+      </div>`).join('')}
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <span class="stag">Skills</span>
+    <h2 class="stitle">What I Bring</h2>
+    <p class="ssub">A versatile mix of finance, tech, and interpersonal skills</p>
+    <div class="skills-grid">
+      ${DATA.skills.map((s,i)=>`
+      <div class="skill-cat fade d${(i%3)+1}">
+        <h3><i class="fas ${s.icon}"></i> ${s.category}</h3>
+        <div class="skill-tags">${s.items.map(t=>`<span class="skill-tag">${t}</span>`).join('')}</div>
+      </div>`).join('')}
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" style="background:var(--bg-secondary)">
+  <div class="section-inner">
+    <span class="stag">Experience</span>
+    <h2 class="stitle">My Journey</h2>
+    <p class="ssub">Roles, responsibilities, and achievements so far</p>
+    <div class="timeline">
+      ${DATA.experience.map((e,i)=>`
+      <div class="tl-item fade d${i+1}">
+        <div class="tl-card">
+          <div class="tl-date"><i class="fas fa-calendar-alt"></i> ${e.period}</div>
+          <h3>${e.role}</h3>
+          <h4><i class="fas fa-building"></i> ${e.company}</h4>
+          <p>${e.detail}</p>
+        </div>
+      </div>`).join('')}
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <span class="stag">Projects</span>
+    <h2 class="stitle">What I've Built</h2>
+    <p class="ssub">Key projects I've conceptualized and developed</p>
+    <div class="projects-grid">
+      ${DATA.projects.map((p,i)=>`
+      <div class="proj-card fade d${(i%3)+1}">
+        <div class="proj-icon"><i class="fas ${p.icon}"></i></div>
+        <h3>${p.name}</h3>
+        <p>${p.desc}</p>
+        <div class="proj-tags">${p.tags.map(t=>`<span class="proj-tag">${t}</span>`).join('')}</div>
+      </div>`).join('')}
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" style="background:var(--bg-secondary)">
+  <div class="section-inner">
+    <span class="stag">Certifications</span>
+    <h2 class="stitle">Credentials</h2>
+    <p class="ssub">Learning milestones and recognized achievements</p>
+    <div class="cert-grid">
+      ${DATA.certifications.map((c,i)=>`
+      <div class="cert-card fade d${(i%3)+1}">
+        <div class="cert-icon"><i class="fas ${c.icon}"></i></div>
+        <div class="cert-info">
+          <h3>${c.name}</h3>
+          <p>${c.issuer}</p>
+          <span><i class="fas fa-calendar"></i> ${c.date}</span>
+        </div>
+      </div>`).join('')}
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <span class="stag">Contact</span>
+    <h2 class="stitle">Get In Touch</h2>
+    <p class="ssub">Open for collaborations, opportunities, or just a chat</p>
+    <div class="contact-grid">
+      <div class="contact-links fade d1">
+        <a href="mailto:${DATA.email}" class="c-link">
+          <div class="c-link-icon"><i class="fas fa-envelope"></i></div>
+          <div class="c-link-info"><label>Email</label><span>${DATA.email}</span></div>
+        </a>
+        <a href="tel:${DATA.phone.replace(/\s/g,'')}" class="c-link">
+          <div class="c-link-icon"><i class="fas fa-phone"></i></div>
+          <div class="c-link-info"><label>Phone</label><span>${DATA.phone}</span></div>
+        </a>
+        <div class="c-link">
+          <div class="c-link-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="c-link-info"><label>Location</label><span>${DATA.location}</span></div>
+        </div>
+        <a href="${DATA.github}" target="_blank" rel="noopener" class="c-link">
+          <div class="c-link-icon"><i class="fab fa-github"></i></div>
+          <div class="c-link-info"><label>GitHub</label><span>View my profile →</span></div>
+        </a>
+      </div>
+      <div class="contact-form fade d2">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" id="fn" placeholder="John"></div>
+          <div class="form-group"><label>Last Name</label><input type="text" id="ln" placeholder="Doe"></div>
+        </div>
+        <div class="form-group"><label>Email Address</label><input type="email" id="fe" placeholder="john@example.com"></div>
+        <div class="form-group"><label>Subject</label><input type="text" id="fs" placeholder="Project or Opportunity"></div>
+        <div class="form-group"><label>Message</label><textarea id="fm" rows="5" placeholder="Tell me about your idea or inquiry…"></textarea></div>
+        <button class="btn-primary" onclick="sendForm()" style="width:100%;justify-content:center">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+        <div class="form-success" id="formOk">✅ Message received! I'll get back to you soon.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© ${new Date().getFullYear()} <strong>${DATA.name}</strong> — Crafted with ❤️ in Lahore, Pakistan &nbsp;|&nbsp;
+    <a href="mailto:${DATA.email}">${DATA.email}</a>
+  </p>
+</footer>
+`;
+
+/* ── THEME TOGGLE ── */
+function toggleTheme(){
+  const isDark = document.documentElement.getAttribute('data-theme')==='dark';
+  document.documentElement.setAttribute('data-theme', isDark?'light':'dark');
+  document.getElementById('themeBtn').innerHTML = isDark
+    ? '<i class="fas fa-moon"></i>'
+    : '<i class="fas fa-sun"></i>';
+  try{localStorage.setItem('theme', isDark?'light':'dark')}catch(e){}
+}
+try{
+  const saved = localStorage.getItem('theme')||'light';
+  document.documentElement.setAttribute('data-theme',saved);
+  document.getElementById('themeBtn').innerHTML = saved==='dark'
+    ? '<i class="fas fa-sun"></i>'
+    : '<i class="fas fa-moon"></i>';
+}catch(e){}
+
+/* ── MOBILE MENU ── */
+function toggleMenu(){document.getElementById('navLinks').classList.toggle('open')}
+function closeMenu(){document.getElementById('navLinks').classList.remove('open')}
+
+/* ── SCROLL TOP BUTTON ── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('vis',window.scrollY>400);
+});
+
+/* ── SCROLL ANIMATIONS ── */
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}});
+},{threshold:.1});
+document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+
+/* ── CONTACT FORM ── */
+function sendForm(){
+  const fn=document.getElementById('fn').value.trim();
+  const fe=document.getElementById('fe').value.trim();
+  const fm=document.getElementById('fm').value.trim();
+  if(!fn||!fe||!fm){alert('Please fill in your name, email, and message.');return;}
+  const ok=document.getElementById('formOk');
+  ok.style.display='block';
+  ['fn','ln','fe','fs','fm'].forEach(id=>document.getElementById(id).value='');
+  setTimeout(()=>ok.style.display='none',6000);
+}
+
+/* ── RESUME DOWNLOAD ──
+   Update DATA.resumeURL to your PDF path, e.g. './Bakhtiar_Safi_Resume.pdf' */
+function dlResume(e){
+  if(DATA.resumeURL==='#'){
+    e.preventDefault();
+    alert('📄 Add your resume PDF to the project folder and update DATA.resumeURL in the data section.');
+  }
+}
+</script>
+</body>
+</html>
